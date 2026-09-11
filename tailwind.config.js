@@ -7,9 +7,9 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        display: ['Syne', 'sans-serif'],
-        body: ['DM Sans', 'sans-serif'],
-      },
+  display: ['DM Serif Display', 'serif'],
+  body: ['Tinos', 'serif'],
+},
       colors: {
         navy: {
           50: '#f0f4ff',
