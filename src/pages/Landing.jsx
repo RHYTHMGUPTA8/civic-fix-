@@ -159,10 +159,7 @@ export default function Landing() {
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32">
           <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-1.5 mb-8 border border-white/20">
-              <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
-              <span className="text-sm font-body text-white/80">Active in 24 cities across India</span>
-            </div>
+            
 
             <h1 className="font-display font-extrabold text-5xl md:text-7xl leading-tight mb-6">
               Fix Your City,
