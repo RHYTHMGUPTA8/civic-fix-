@@ -10,7 +10,7 @@ const {
 } = require('../controllers/issues');
 const { verifyToken } = require('../middleware/auth');
 const upload = require('../middleware/upload');
-
+const { issueLimiter } = require('../middleware/rateLimit.middleware');
 const router = Router();
 
 // Public routes (auth optional for userVoted field)
@@ -59,6 +59,7 @@ router.get('/:id/comments', getComments);
 router.post(
   '/',
   verifyToken,
+  issueLimiter,
   upload.array('photos', 5),
   [
     body('title').trim().notEmpty().withMessage('Title is required').isLength({ min: 5, max: 120 }).withMessage('Title must be 5–120 characters'),

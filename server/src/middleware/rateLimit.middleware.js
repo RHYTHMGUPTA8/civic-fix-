@@ -34,3 +34,14 @@ export const aiLimiter = rateLimit({
   message: { error: 'AI rate limit reached. Please wait a moment.' },
   keyGenerator: (req) => req.user?.id || req.ip,
 });
+
+export const issueLimiter = rateLimit({
+  windowMs: 10 * 60 * 1000,
+  max: 3,
+  standardHeaders: true,
+  legacyHeaders: false,
+  keyGenerator: (req) => req.user?.id || req.ip,
+  message: {
+    error: 'Too many complaints submitted. Please wait 10 minutes before submitting another complaint.'
+  }
+});
